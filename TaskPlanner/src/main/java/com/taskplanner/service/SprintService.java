@@ -14,6 +14,8 @@ public interface SprintService {
 
     public Task addTaskToSprint(Task task , Integer sprintId) throws SprintException;
 
+    public Task addTaskToSprintById(Integer sprintId, Integer taskId) throws SprintException, TaskException;
+
     public List<Task> getTaskBySprint(Integer sprintId) throws SprintException, TaskException;
 
     public List<Task> getTaskAssigneeToUser(String assignee) throws UserNotFoundException;

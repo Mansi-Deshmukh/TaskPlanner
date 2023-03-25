@@ -66,7 +66,7 @@ public class SprintServiceImpl implements SprintService{
         Sprint sprint = sprintRepo.findById(sprintId).orElseThrow(() -> new SprintException("Sprint not found with id :"+ sprintId) );
 
         if(sprint.getAssingedTasks().isEmpty()){
-            throw new TaskException("No task added to sprint :"+ sprint.getName());
+            throw new TaskException("No task added to sprint :"+ sprint.getSprintName());
         }
        return sprint.getAssingedTasks();
 
@@ -86,6 +86,21 @@ public class SprintServiceImpl implements SprintService{
         }
 
         return taskList;
+    }
+
+    @Override
+    public Task addTaskToSprintById(Integer sprintId, Integer taskId) throws SprintException, TaskException {
+        Sprint sprint = sprintRepo.findById(sprintId).orElseThrow(()-> new SprintException("Srint not fount with the given id : "+sprintId));
+
+        Task task = taskRepo.findById(taskId).orElseThrow(()-> new TaskException("Srint not fount with the given id : "+sprintId));
+
+        
+        sprint.getAssingedTasks().add(task);
+        task.setSprint(sprint);
+        taskRepo.save(task);
+        sprintRepo.save(sprint);
+
+        return task;
     }
     
 }

@@ -26,12 +26,12 @@ import lombok.NoArgsConstructor;
 public class Sprint {
     
     @Id
-    // @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "sprintId")
-    private Integer sprintid;
+    private Integer sprintId;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "sprintName")
+    private String sprintName;
 
     @JsonIgnore
     // @Column(name = "taskList")

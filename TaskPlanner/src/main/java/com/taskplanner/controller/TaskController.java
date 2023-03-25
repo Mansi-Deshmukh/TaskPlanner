@@ -31,15 +31,6 @@ public class TaskController {
         return new ResponseEntity<Task>(saveTask, HttpStatus.CREATED);
     }
 
-//     @GetMapping("/getTask")
-//     public ResponseEntity<List<Task>> getUserById() {
-
-//         List<Task> getUser = taskService.getTask();
-
-//         return new ResponseEntity<List<Task>>(getUser, HttpStatus.OK);
-
-//     }
-
     @PutMapping("/change_status/{taskId}/{status}")
     public  ResponseEntity<Task> changeTaskStatusHandler(@PathVariable("status") String status, @PathVariable("taskId") Integer taskId) throws TaskException{
         
