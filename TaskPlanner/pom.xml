@@ -12,7 +12,7 @@
 	<artifactId>TaskPlanner</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>TaskPlanner</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Task Planner</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -41,16 +41,44 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- <dependency>
+           <groupId>io.springfox</groupId>  
+           <artifactId>springfox-swagger2</artifactId>
+           <version>3.0.0</version>
+        </dependency> -->
+<!-- 
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>3.0.0</version>
+</dependency> -->
+
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-boot-starter</artifactId>
+    <version>3.0.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.24</version><!--$NO-MVN-MAN-VER$-->
+    <scope>provided</scope>
+</dependency>
+
+
+
 	</dependencies>
 
 	<build>
